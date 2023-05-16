@@ -1,11 +1,20 @@
 import React from "react"
 import { MainPage } from "./LandingPage/MainPage"
-// import logo from './logo.svg';
-// import './App.css';
+import "./App.css"
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
+import { ContactPage } from "./ContactPageFolder/ContactPage"
+
 function App() {
   return (
     <>
-      <MainPage />
+      {/* <Router> */}
+      <Routes>
+        <Route path="/" element={<MainPage />} />
+        {/* <Route path="/about" element={<About />} /> */}
+        <Route path="/contact" element={<ContactPage />} />
+      </Routes>
+      {/* </Router> */}
+
       {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>

@@ -10,6 +10,7 @@ import MenuItem from "@mui/material/MenuItem"
 import MenuList from "@mui/material/MenuList"
 import { GiHamburgerMenu } from "react-icons/gi"
 import { Box, Breadcrumbs, Link, useMediaQuery } from "@mui/material"
+import { Link as LinkRouter } from "react-router-dom"
 
 const StyledNavbar = styled.nav`
   background-color: #7fc5fd;
@@ -26,7 +27,7 @@ const StyledMenuButton = styled(Button)`
   && {
     color: white;
     padding: 0.5rem;
-    margin-left: auto;
+    // margin-left: auto;
   }
 `
 const MyName: FC = () => {
@@ -57,8 +58,8 @@ const FullScreenNavbar: FC = () => {
     <>
       <MyName />
       <Breadcrumbs>
-        <Link color="inherit" href="#" underline="none">
-          Contact
+        <Link color="inherit" href="/contact" underline="none">
+          <LinkRouter to="/contact">Contact</LinkRouter>
         </Link>
         <Link color="inherit" href="#" underline="none">
           My Work
@@ -138,7 +139,9 @@ const MobileScreenBar: FC = () => {
                     aria-labelledby="composition-button"
                     onKeyDown={handleListKeyDown}
                   >
-                    <MenuItem onClick={handleClose}>Contact</MenuItem>
+                    <Link color="inherit" href="/contact" underline="none">
+                      <MenuItem onClick={handleClose}>Contact</MenuItem>
+                    </Link>
                     <MenuItem onClick={handleClose}>My Work</MenuItem>
                   </MenuList>
                 </ClickAwayListener>
