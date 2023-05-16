@@ -28,10 +28,10 @@ export const AboutMe: () => JSX.Element = () => {
   return (
     <>
       <AboutMeContainer>
-        <Typography style={{ fontFamily: "Comic Sans MS, monospace" }} variant="h4" gutterBottom>
+        <Typography style={{ fontFamily: "Helvetica Neue, sans-serif" }} variant="h4" gutterBottom>
           About Me
         </Typography>
-        <Typography style={{ fontFamily: "Comic Sans MS, monospace" }} variant="body1">
+        <Typography style={{ fontFamily: "Helvetica Neue, sans-serif" }} variant="body1">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae tellus nec enim eleifend tristique. Nullam
           interdum vulputate metus,
         </Typography>

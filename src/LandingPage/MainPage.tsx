@@ -74,7 +74,7 @@ const AvatarGrid = styled(Grid)`
 export const IntroParagraph = styled.div`
   background-color: #fcfcf9;
   color: #1fb7fc;
-  font-family: Comic Sans MS, monospace;
+  font-family: "Helvetica Neue", sans-serif;
   margin: auto;
   box-sizing: border-box;
   // background: linear-gradient(to bottom right, #2a6f97, #a1c4fd);
