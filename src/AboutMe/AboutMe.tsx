@@ -19,7 +19,7 @@ const AboutMeContainer = styled(Grid)`
   @media (min-width: 56.25rem) {
     /* Styles for screens 900px and above */
     flex-basis: 100%;
-    max-width: 100%;
+    max-width: 50%;
     margin-bottom: 0; /* Remove margin-bottom for spacing */
   }
 `
@@ -31,7 +31,7 @@ export const AboutMe: () => JSX.Element = () => {
         <Typography style={{ fontFamily: "Helvetica Neue, sans-serif" }} variant="h4" gutterBottom>
           About Me
         </Typography>
-        <Typography style={{ fontFamily: "Helvetica Neue, sans-serif" }} variant="body1">
+        <Typography style={{ fontFamily: "Helvetica Neue, sans-serif", padding: "1rem" }} variant="body1">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae tellus nec enim eleifend tristique. Nullam
           interdum vulputate metus,
         </Typography>

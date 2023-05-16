@@ -30,8 +30,8 @@ export const ContactPage = () => {
     <>
       <ContactPageContainer>
         <Typography style={{ fontFamily: "Helvetica Neue, sans-serif" }}>
-          Reach out to me at my email <IoChevronForward />
           <a href="mailto:angster770@gmail.com">
+            Reach out to me at my email <IoChevronForward />
             <RiMailFill />
           </a>
         </Typography>
