@@ -1,8 +1,9 @@
 import React from "react"
 import { Typography, Paper, Grid } from "@mui/material"
 import styled from "@emotion/styled"
+import GitHubIcon from "@mui/icons-material/GitHub"
 
-const AboutMeContainer = styled(Grid)`
+const MyWorkContainer = styled(Grid)`
   background-color: #fcfcf9;
   color: #1fb7fc;
   font-family: Comic Sans MS, monospace;
@@ -24,21 +25,28 @@ const AboutMeContainer = styled(Grid)`
   }
 `
 
-export const AboutMe: () => JSX.Element = () => {
+export const MyWork: () => JSX.Element = () => {
   return (
     <>
-      <AboutMeContainer>
+      <MyWorkContainer>
         <Typography style={{ fontFamily: "Helvetica Neue, sans-serif" }} variant="h4" gutterBottom>
-          About Me
+          My Work
         </Typography>
-        <Typography
-          style={{ fontFamily: "Helvetica Neue, sans-serif", padding: "1rem", maxWidth: "50%" }}
-          variant="body1"
-        >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae tellus nec enim eleifend tristique. Nullam
-          interdum vulputate metus,
-        </Typography>
-      </AboutMeContainer>
+        <a href="https://github.com/Angster770/angster_portfolio" target="_blank" rel="noopener noreferrer">
+          <Typography
+            style={{
+              textDecoration: "none",
+              color: "#1fb7fc",
+              fontFamily: "Helvetica Neue, sans-serif",
+              padding: "1rem",
+            }}
+            variant="body1"
+          >
+            <GitHubIcon />
+            Check Out My Repo Here
+          </Typography>
+        </a>
+      </MyWorkContainer>
     </>
   )
 }

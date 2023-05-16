@@ -62,6 +62,9 @@ const FullScreenNavbar: FC = () => {
           <LinkRouter to="/contact">Contact</LinkRouter>
         </Link>
         <Link color="inherit" href="#" underline="none">
+          About Me
+        </Link>
+        <Link color="inherit" href="#" underline="none">
           My Work
         </Link>
       </Breadcrumbs>
@@ -142,6 +145,7 @@ const MobileScreenBar: FC = () => {
                     <Link color="inherit" href="/contact" underline="none">
                       <MenuItem onClick={handleClose}>Contact</MenuItem>
                     </Link>
+                    <MenuItem onClick={handleClose}>About Me</MenuItem>
                     <MenuItem onClick={handleClose}>My Work</MenuItem>
                   </MenuList>
                 </ClickAwayListener>

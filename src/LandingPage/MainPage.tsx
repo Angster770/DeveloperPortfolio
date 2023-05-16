@@ -8,6 +8,7 @@ import ProfileImg from "../Imgs/ProfileImg.jpeg"
 import Button from "@mui/material/Button"
 import { ContactPage } from "../ContactPageFolder/ContactPage"
 import { AboutMe } from "../AboutMe/AboutMe"
+import { MyWork } from "../MyWork/MyWork"
 
 const Body = styled(Grid).attrs(() => ({
   container: true,
@@ -131,7 +132,7 @@ export const MainPage: () => JSX.Element = () => {
           >
             This is me by the way
           </Typography>
-          <Avatar sx={{ width: 340, height: 340 }} variant="square" alt="Remy Sharp" src={ProfileImg} />
+          <Avatar sx={{ width: 340, height: 340 }} variant="circular" alt="Remy Sharp" src={ProfileImg} />
           <Button
             variant="contained"
             style={{
@@ -142,11 +143,12 @@ export const MainPage: () => JSX.Element = () => {
               textTransform: "none",
             }}
           >
-            Hire Me
+            Lets Talk
           </Button>
         </AvatarGrid>
         <ContactPage />
         <AboutMe />
+        <MyWork />
       </Body>
     </>
   )
