@@ -71,7 +71,11 @@ const AvatarGrid = styled(Grid)`
     margin-left: 1rem;
   }
 `
-
+const StyledAvatar = styled(Avatar)`
+  width: 360px;
+  height: 360px;
+  box-shadow: 0 0 130px rgba(0, 0, 0, 0.3);
+`
 export const IntroParagraph = styled.div`
   background-color: #fcfcf9;
   color: #1fb7fc;
@@ -132,7 +136,7 @@ export const MainPage: () => JSX.Element = () => {
           >
             This is me by the way
           </Typography>
-          <Avatar sx={{ width: 340, height: 340 }} variant="circular" alt="Remy Sharp" src={ProfileImg} />
+          <StyledAvatar sx={{ width: 340, height: 340 }} variant="circular" alt="Remy Sharp" src={ProfileImg} />
           <Button
             variant="contained"
             style={{
