@@ -19,12 +19,17 @@ const StyledNavbar = styled.nav`
 
 const MobileScreenBarContainer = styled("div")`
   display: flex;
-  justify-content: flex-end;
+  // justify-content: flex-end;
   background-color: #7fc5fd;
   color: #fff;
   font-family: proxima-nova, "Helvetica Neue", Helvetica, Arial, sans-serif;
 `
-
+const HamburgerIcon = styled(GiHamburgerMenu)`
+  margin-left: 5rem;
+  // margin-right: auto;
+  // justify-self: flex-end;
+  // align-self: flex-end;
+`
 const MyName: FC = () => {
   return (
     <>
@@ -35,7 +40,6 @@ const MyName: FC = () => {
           color: "#fcfcf9",
           fontWeight: 600,
           fontSize: "1.5rem",
-          flexGrow: 1,
           maxWidth: "100%",
           overflow: "hidden",
           textOverflow: "ellipsis",
@@ -82,7 +86,7 @@ const MobileScreenBar: FC = () => {
       <MobileScreenBarContainer>
         <MyName />
         <Button onClick={handleToggle}>
-          <GiHamburgerMenu size={28} />
+          <HamburgerIcon size={28} />
         </Button>
         <Drawer anchor="right" open={open} onClose={handleClose}>
           <List>
