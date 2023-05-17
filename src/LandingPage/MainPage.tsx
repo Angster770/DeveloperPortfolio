@@ -97,9 +97,9 @@ export const IntroParagraph = styled.div`
   @media (min-width: 56.25rem) {
     /* Styles for screens 900px and above */
     height: 25rem;
-    width: 25rem;
+    // width: 75rem;
     max-width: 400px;
-    margin-right: 1rem;
+    // margin-right: 1rem;
     font-size: 2rem;
   }
   /* Medium screens */
@@ -140,9 +140,9 @@ const SpeechBubble = styled.div`
       content: "";
       position: absolute;
       top: 50%;
-      right: -20px;
+      right: -25rem;
       transform: translateY(-50%);
-      border-width: 20px 0 20px 20px;
+      border-width: 90px 0 90px 400px;
       border-style: solid;
       border-color: transparent transparent transparent #7fc5fd;
     }
