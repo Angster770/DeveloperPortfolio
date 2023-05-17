@@ -9,7 +9,7 @@ import { Link as LinkRouter } from "react-router-dom"
 const StyledNavbar = styled.nav`
   background-color: #7fc5fd;
   color: #fcfcf9
-  font-family: "Helvetica Neue", sans-serif;
+  font-family: proxima-nova,"Helvetica Neue",Helvetica,Arial,sans-serif;
   display: flex;
   justify-content: space-between;
   align-items: center;

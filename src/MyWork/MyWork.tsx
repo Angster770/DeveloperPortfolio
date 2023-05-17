@@ -6,10 +6,9 @@ import GitHubIcon from "@mui/icons-material/GitHub"
 const MyWorkContainer = styled(Grid)`
   background-color: #fcfcf9;
   color: #1fb7fc;
-  font-family: Comic Sans MS, monospace;
+  font-family: proxima-nova, "Helvetica Neue", Helvetica, Arial, sans-serif;
   background-color: #fcfcf9;
   color: #1fb7fc;
-  font-family: Comic Sans MS, monospace;
   display: flex;
   flex-direction: column;
   align-items: center;

@@ -7,7 +7,7 @@ import { IoChevronForward } from "react-icons/io5"
 const ContactPageContainer = styled(Grid)`
   background-color: #fcfcf9;
   color: #1fb7fc;
-  font-family: Comic Sans, monospace;
+  font-family: proxima-nova, "Helvetica Neue", Helvetica, Arial, sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;

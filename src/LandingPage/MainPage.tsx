@@ -79,7 +79,7 @@ const StyledAvatar = styled(Avatar)`
 export const IntroParagraph = styled.div`
   background-color: #fcfcf9;
   color: #1fb7fc;
-  font-family: "Helvetica Neue", sans-serif;
+  font-family: "proxima-nova,"Helvetica Neue",Helvetica,Arial,sans-serif;
   margin: auto;
   box-sizing: border-box;
   // background: linear-gradient(to bottom right, #2a6f97, #a1c4fd);
@@ -97,10 +97,9 @@ export const IntroParagraph = styled.div`
   @media (min-width: 56.25rem) {
     /* Styles for screens 900px and above */
     height: 25rem;
-    // width: 75rem;
     max-width: 400px;
-    // margin-right: 1rem;
     font-size: 2rem;
+    padding: 1.5rem;
   }
   /* Medium screens */
   @media (min-width: 37.5rem) and (max-width: 56.25rem) {
@@ -142,7 +141,7 @@ const SpeechBubble = styled.div`
       top: 50%;
       right: -25rem;
       transform: translateY(-50%);
-      border-width: 90px 0 90px 400px;
+      border-width: 20px 0 20px 400px;
       border-style: solid;
       border-color: transparent transparent transparent #7fc5fd;
     }
@@ -163,9 +162,9 @@ export const MainPage: () => JSX.Element = () => {
       >
         {/* <IntroGrid xs={12} sm={6} md={4} style={{ flexDirection: "row" }}> */}
         <SpeechBubble>
-          <IntroParagraph>
-            Hi, I am a junior software engineer with 2 years of experience, I'm looking for opportunities to deliver
-            front-end solutions that meet the unique needs of my clients.
+          <IntroParagraph style={{ padding: "1rem", fontSize: "1rem" }}>
+            Hi, <br /> I am a junior software engineer with 2 years of experience, I'm looking for opportunities to
+            deliver front-end solutions that meet the unique needs of my clients.
           </IntroParagraph>
         </SpeechBubble>
         {/* </IntroGrid> */}

@@ -5,10 +5,9 @@ import styled from "@emotion/styled"
 const AboutMeContainer = styled(Grid)`
   background-color: #fcfcf9;
   color: #1fb7fc;
-  font-family: Comic Sans MS, monospace;
   background-color: #fcfcf9;
   color: #1fb7fc;
-  font-family: Comic Sans MS, monospace;
+  font-family: proxima-nova, "Helvetica Neue", Helvetica, Arial, sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
