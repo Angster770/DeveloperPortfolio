@@ -25,11 +25,15 @@ const MobileScreenBarContainer = styled("div")`
   font-family: proxima-nova, "Helvetica Neue", Helvetica, Arial, sans-serif;
 `
 const HamburgerIcon = styled(GiHamburgerMenu)`
-  margin-left: 5rem;
-  // margin-right: auto;
-  // justify-self: flex-end;
-  // align-self: flex-end;
+  @media (max-width: 400px) {
+    margin-left: 5rem;
+  }
+
+  @media (min-width: 401px) {
+    margin-left: 7rem;
+  }
 `
+
 const MyName: FC = () => {
   return (
     <>
@@ -88,7 +92,12 @@ const MobileScreenBar: FC = () => {
         <Button onClick={handleToggle}>
           <HamburgerIcon size={28} />
         </Button>
-        <Drawer anchor="right" open={open} onClose={handleClose}>
+        <Drawer
+          anchor="right"
+          open={open}
+          onClose={handleClose}
+          PaperProps={{ style: { backgroundColor: "#7fc5fd", color: "#fcfcf9" } }}
+        >
           <List>
             <ListItem button onClick={handleClose}>
               <ListItemText>Contact</ListItemText>
@@ -100,6 +109,7 @@ const MobileScreenBar: FC = () => {
               <ListItemText>My Work</ListItemText>
             </ListItem>
           </List>
+          <div style={{ background: "#7fc5fd" }} />
         </Drawer>
       </MobileScreenBarContainer>
     </>
