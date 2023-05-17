@@ -137,18 +137,20 @@ export const MainPage: () => JSX.Element = () => {
             This is me by the way
           </Typography>
           <StyledAvatar sx={{ width: 340, height: 340 }} variant="circular" alt="Remy Sharp" src={ProfileImg} />
-          <Button
-            variant="contained"
-            style={{
-              marginTop: "2rem",
-              backgroundColor: "#1FB7FC",
-              color: "#fcfcf9",
-              borderRadius: "12px",
-              textTransform: "none",
-            }}
-          >
-            Lets Talk
-          </Button>
+          <a href="mailto:angster770@gmail.com" style={{ textDecoration: "none" }}>
+            <Button
+              variant="contained"
+              style={{
+                marginTop: "2rem",
+                backgroundColor: "#1FB7FC",
+                color: "#fcfcf9",
+                borderRadius: "12px",
+                textTransform: "none",
+              }}
+            >
+              Let's Talk
+            </Button>
+          </a>
         </AvatarGrid>
         <ContactPage />
         <AboutMe />

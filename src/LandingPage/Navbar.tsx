@@ -2,14 +2,8 @@ import React, { FC } from "react"
 import styled from "styled-components"
 import Typography from "@mui/material/Typography"
 import Button from "@mui/material/Button"
-import ClickAwayListener from "@mui/material/ClickAwayListener"
-import Grow from "@mui/material/Grow"
-import Paper from "@mui/material/Paper"
-import Popper from "@mui/material/Popper"
-import MenuItem from "@mui/material/MenuItem"
-import MenuList from "@mui/material/MenuList"
 import { GiHamburgerMenu } from "react-icons/gi"
-import { Box, Breadcrumbs, Link, useMediaQuery } from "@mui/material"
+import { Box, Breadcrumbs, Link, useMediaQuery, Drawer, List, ListItem, ListItemText } from "@mui/material"
 import { Link as LinkRouter } from "react-router-dom"
 
 const StyledNavbar = styled.nav`
@@ -23,13 +17,14 @@ const StyledNavbar = styled.nav`
   padding: 0 1rem .5rem;
 `
 
-const StyledMenuButton = styled(Button)`
-  && {
-    color: white;
-    padding: 0.5rem;
-    // margin-left: auto;
-  }
+const MobileScreenBarContainer = styled("div")`
+  display: flex;
+  justify-content: flex-end;
+  background-color: #7fc5fd;
+  color: #fff;
+  font-family: proxima-nova, "Helvetica Neue", Helvetica, Arial, sans-serif;
 `
+
 const MyName: FC = () => {
   return (
     <>
@@ -47,7 +42,7 @@ const MyName: FC = () => {
           whiteSpace: "nowrap",
         }}
       >
-        <Box>Angster</Box>
+        <Box>Menachem Angster</Box>
       </Typography>
     </>
   )
@@ -74,86 +69,35 @@ const FullScreenNavbar: FC = () => {
 
 const MobileScreenBar: FC = () => {
   const [open, setOpen] = React.useState(false)
-  const anchorRef = React.useRef<HTMLButtonElement>(null)
 
   const handleToggle = () => {
-    setOpen((prevOpen) => !prevOpen)
+    setOpen(!open)
   }
 
-  const handleClose = (event: Event | React.SyntheticEvent) => {
-    if (anchorRef.current && anchorRef.current.contains(event.target as HTMLElement)) {
-      return
-    }
-
+  const handleClose = () => {
     setOpen(false)
   }
-
-  function handleListKeyDown(event: React.KeyboardEvent) {
-    if (event.key === "Tab") {
-      event.preventDefault()
-      setOpen(false)
-    } else if (event.key === "Escape") {
-      setOpen(false)
-    }
-  }
-
-  // return focus to the button when we transitioned from !open -> open
-  const prevOpen = React.useRef(open)
-  React.useEffect(() => {
-    if (prevOpen.current === true && open === false) {
-      anchorRef.current!.focus()
-    }
-
-    prevOpen.current = open
-  }, [open])
   return (
     <>
-      <>
+      <MobileScreenBarContainer>
         <MyName />
-        <StyledMenuButton
-          ref={anchorRef}
-          aria-controls={open ? "composition-menu" : undefined}
-          aria-expanded={open ? "true" : undefined}
-          aria-haspopup="true"
-          onClick={handleToggle}
-        >
+        <Button onClick={handleToggle}>
           <GiHamburgerMenu size={28} />
-        </StyledMenuButton>
-        <Popper
-          open={open}
-          anchorEl={anchorRef.current}
-          role={undefined}
-          placement="bottom-start"
-          transition
-          disablePortal
-        >
-          {({ TransitionProps, placement }) => (
-            <Grow
-              {...TransitionProps}
-              style={{
-                transformOrigin: placement === "bottom-start" ? "left top" : "left bottom",
-              }}
-            >
-              <Paper>
-                <ClickAwayListener onClickAway={handleClose}>
-                  <MenuList
-                    autoFocusItem={open}
-                    id="composition-menu"
-                    aria-labelledby="composition-button"
-                    onKeyDown={handleListKeyDown}
-                  >
-                    <Link color="inherit" href="/contact" underline="none">
-                      <MenuItem onClick={handleClose}>Contact</MenuItem>
-                    </Link>
-                    <MenuItem onClick={handleClose}>About Me</MenuItem>
-                    <MenuItem onClick={handleClose}>My Work</MenuItem>
-                  </MenuList>
-                </ClickAwayListener>
-              </Paper>
-            </Grow>
-          )}
-        </Popper>
-      </>
+        </Button>
+        <Drawer anchor="right" open={open} onClose={handleClose}>
+          <List>
+            <ListItem button onClick={handleClose}>
+              <ListItemText>Contact</ListItemText>
+            </ListItem>
+            <ListItem button onClick={handleClose}>
+              <ListItemText>About Me</ListItemText>
+            </ListItem>
+            <ListItem button onClick={handleClose}>
+              <ListItemText>My Work</ListItemText>
+            </ListItem>
+          </List>
+        </Drawer>
+      </MobileScreenBarContainer>
     </>
   )
 }

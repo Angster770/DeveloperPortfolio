@@ -32,7 +32,7 @@ export const MyWork: () => JSX.Element = () => {
         <Typography style={{ fontFamily: "Helvetica Neue, sans-serif" }} variant="h4" gutterBottom>
           My Work
         </Typography>
-        <a href="https://github.com/Angster770/angster_portfolio" target="_blank" rel="noopener noreferrer">
+        <a href="https://github.com/Angster770/DeveloperPortfolio" target="_blank" rel="noopener noreferrer">
           <Typography
             style={{
               textDecoration: "none",
