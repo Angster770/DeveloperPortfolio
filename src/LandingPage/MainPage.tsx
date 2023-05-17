@@ -110,6 +110,45 @@ export const IntroParagraph = styled.div`
   }
 `
 
+const SpeechBubble = styled.div`
+  /* Common styles for both mobile and full screen */
+  color: #7fc5fd;
+  background: #7fc5fd;
+  position: relative;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 50px auto;
+  max-width: 320px;
+
+  /* Styles for mobile */
+  @media (max-width: 768px) {
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: -40px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-width: 40px 20px 0;
+      border-style: solid;
+      border-color: #7fc5fd transparent transparent;
+    }
+  }
+
+  /* Styles for full screen */
+  @media (min-width: 769px) {
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: -20px;
+      transform: translateY(-50%);
+      border-width: 20px 0 20px 20px;
+      border-style: solid;
+      border-color: transparent transparent transparent #7fc5fd;
+    }
+  }
+`
+
 export const MainPage: () => JSX.Element = () => {
   return (
     <>
@@ -122,20 +161,15 @@ export const MainPage: () => JSX.Element = () => {
         columns={{ xs: 1, sm: 1, md: 2 }}
         columnSpacing={{ xs: 1, sm: 2, md: 3 }}
       >
-        <IntroGrid xs={12} sm={6} md={4} style={{ flexDirection: "row" }}>
+        {/* <IntroGrid xs={12} sm={6} md={4} style={{ flexDirection: "row" }}> */}
+        <SpeechBubble>
           <IntroParagraph>
-            As a junior software engineer with 2 years of experience, I'm looking for opportunities to deliver front-end
-            solutions that meet the unique needs of my clients.
+            Hi, I am a junior software engineer with 2 years of experience, I'm looking for opportunities to deliver
+            front-end solutions that meet the unique needs of my clients.
           </IntroParagraph>
-        </IntroGrid>
+        </SpeechBubble>
+        {/* </IntroGrid> */}
         <AvatarGrid xs={12} sm={6} md={2} container justifyContent="center" alignItems="center" direction="column">
-          <Typography
-            variant="caption"
-            align="center"
-            style={{ fontFamily: "Roboto Mono, monospace", color: "#1FB7FC" }}
-          >
-            This is me by the way
-          </Typography>
           <StyledAvatar sx={{ width: 340, height: 340 }} variant="circular" alt="Remy Sharp" src={ProfileImg} />
           <a href="mailto:angster770@gmail.com" style={{ textDecoration: "none" }}>
             <Button
