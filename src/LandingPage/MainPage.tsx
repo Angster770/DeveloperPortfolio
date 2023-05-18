@@ -142,7 +142,7 @@ export const MainPage: () => JSX.Element = () => {
         <IntroGrid>
           {/* <SpeechBubble> */}
           <IntroParagraph style={{ fontFamily: "VTCSundaykomixcaps, sans-serif" }}>
-            Hi, <br /> I'm looking for opportunities to deliver front-end solutions that meet the unique needs of my
+            Hi, <br /> I am looking for opportunities to deliver front-end solutions that meet the unique needs of my
             clients.
           </IntroParagraph>
           {/* </SpeechBubble> */}
