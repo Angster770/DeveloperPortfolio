@@ -60,10 +60,7 @@ const FullScreenNavbar: FC = () => {
   return (
     <>
       <MyName />
-      <Breadcrumbs>
-        <Link color="inherit" href="/contact" underline="none">
-          <LinkRouter to="/contact">Contact</LinkRouter>
-        </Link>
+      <Breadcrumbs style={{ color: "#fcfcf9" }}>
         <Link color="inherit" href="#" underline="none">
           About Me
         </Link>
@@ -99,9 +96,6 @@ const MobileScreenBar: FC = () => {
           PaperProps={{ style: { backgroundColor: "#7fc5fd", color: "#fcfcf9" } }}
         >
           <List>
-            <ListItem button onClick={handleClose}>
-              <ListItemText>Contact</ListItemText>
-            </ListItem>
             <ListItem button onClick={handleClose}>
               <ListItemText>About Me</ListItemText>
             </ListItem>
