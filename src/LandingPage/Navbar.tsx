@@ -19,7 +19,6 @@ const StyledNavbar = styled.nav`
 
 const MobileScreenBarContainer = styled("div")`
   display: flex;
-  // justify-content: flex-end;
   background-color: #7fc5fd;
   color: #fff;
   font-family: proxima-nova, "Helvetica Neue", Helvetica, Arial, sans-serif;
