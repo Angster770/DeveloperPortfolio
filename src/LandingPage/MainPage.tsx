@@ -9,7 +9,6 @@ import Button from "@mui/material/Button"
 import { ContactPage } from "../ContactPageFolder/ContactPage"
 import { AboutMe } from "../AboutMe/AboutMe"
 import { MyWork } from "../MyWork/MyWork"
-
 const Body = styled(Grid).attrs(() => ({
   container: true,
 }))`
@@ -51,10 +50,15 @@ const Body = styled(Grid).attrs(() => ({
 `
 
 const IntroGrid = styled(Grid)`
+  /* Small screens */
+  @media (max-width: 37.5rem) {
+    height: 100vh;
+  }
+  /* Large screens */
   @media (min-width: 56.25rem) {
     /* Styles for screens 900px and above */
-    flex-basis: 50%;
-    max-width: 100%;
+    // flex-basis: 50%;
+    // max-width: 100%;
   }
 `
 
@@ -63,7 +67,6 @@ const AvatarGrid = styled(Grid)`
   @media (min-width: 56.25rem) {
     /* Styles for screens 900px and above */
     flex-basis: 50%;
-    max-width: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -74,17 +77,19 @@ const AvatarGrid = styled(Grid)`
 const StyledAvatar = styled(Avatar)`
   width: 360px;
   height: 360px;
+
   box-shadow: 0 0 130px rgba(0, 0, 0, 0.3);
   /* Large screens */
   @media (min-width: 56.25rem) {
     /* Styles for screens 900px and above */
-    margin-top: 7rem;
+    // margin-top: 7rem;
   }
 `
 const IntroParagraph = styled.div`
   background-color: #fcfcf9;
-  color: #1fb7fc;
-  font-family: "proxima-nova,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  // color: #1fb7fc;
+  // font-family: "In-House Edition", sans-serif";
+
   margin: auto;
   box-sizing: border-box;
   // background: linear-gradient(to bottom right, #2a6f97, #a1c4fd);
@@ -94,14 +99,13 @@ const IntroParagraph = styled.div`
     /* Styles for screens up to 599px wide */
     align-self: center;
     margin: auto;
-    height: 10rem;
     width: 100%;
     padding: 1.5rem;
   }
   /* Large screens */
   @media (min-width: 56.25rem) {
     /* Styles for screens 900px and above */
-    height: 25rem;
+
     max-width: 400px;
     font-size: 2rem;
     padding: 1.5rem;
@@ -109,15 +113,13 @@ const IntroParagraph = styled.div`
   /* Medium screens */
   @media (min-width: 37.5rem) and (max-width: 56.25rem) {
     /* Styles for screens 600px to 899px wide */
-    height: 25rem;
-    width: 25rem;
   }
 `
 
 const SpeechBubble = styled.div`
   /* Common styles for both mobile and full screen */
-  color: #7fc5fd;
-  background: #7fc5fd;
+  // color: #7fc5fd;
+  // background: #7fc5fd;
   position: relative;
   padding: 10px;
   border-radius: 10px;
@@ -125,32 +127,30 @@ const SpeechBubble = styled.div`
   max-width: 320px;
 
   /* Styles for mobile */
-  @media (max-width: 768px) {
-    &::before {
-      content: "";
-      position: absolute;
-      bottom: -40px;
-      left: 50%;
-      transform: translateX(-50%);
-      border-width: 40px 20px 0;
-      border-style: solid;
-      border-color: #7fc5fd transparent transparent;
-    }
-  }
+  // @media (max-width: 768px) {
+  //   &::before {
+  //     content: "";
+  //     position: absolute;
+  //     bottom: -40px;
+  //     left: 50%;
+  //     transform: translateX(-50%);
+  //     border-width: 40px 20px 0;
+  //     border-style: solid;
+  //     border-color: #7fc5fd transparent transparent;
+  //   }
 
   /* Styles for full screen */
-  @media (min-width: 769px) {
-    &::after {
-      content: "";
-      position: absolute;
-      top: 50%;
-      right: -25rem;
-      transform: translateY(-50%);
-      border-width: 20px 0 20px 400px;
-      border-style: solid;
-      border-color: transparent transparent transparent #7fc5fd;
-    }
-  }
+  // @media (min-width: 769px) {
+  //   &::after {
+  //     content: "";
+  //     position: absolute;
+  //     top: 50%;
+  //     right: -25rem;
+  //     transform: translateY(-50%);
+  //     border-width: 20px 0 20px 400px;
+  //     border-style: solid;
+  //     border-color: transparent transparent transparent #7fc5fd;
+  //   }
 `
 
 export const MainPage: () => JSX.Element = () => {
@@ -162,34 +162,42 @@ export const MainPage: () => JSX.Element = () => {
         display="flex"
         justifyContent="center"
         rowSpacing={{ xs: 1, sm: 12, md: 3 }}
-        columns={{ xs: 1, sm: 1, md: 2 }}
-        columnSpacing={{ xs: 1, sm: 2, md: 3 }}
+        columns={{ xs: 1, sm: 1, md: 1 }}
+        columnSpacing={{ xs: 1, sm: 1, md: 1 }}
       >
-        {/* <IntroGrid xs={12} sm={6} md={4} style={{ flexDirection: "row" }}> */}
-        <SpeechBubble>
-          <IntroParagraph style={{ padding: "1rem", fontSize: "1rem" }}>
-            Hi, <br /> I am a junior software engineer with 2 years of experience, I'm looking for opportunities to
-            deliver front-end solutions that meet the unique needs of my clients.
-          </IntroParagraph>
-        </SpeechBubble>
-        <AvatarGrid xs={12} sm={6} md={2} container justifyContent="center" alignItems="center" direction="column">
-          <StyledAvatar sx={{ width: 340, height: 340 }} variant="circular" alt="Remy Sharp" src={ProfileImg} />
-          <a href="mailto:angster770@gmail.com" style={{ textDecoration: "none" }}>
-            <Button
-              variant="contained"
+        <IntroGrid xs={12} sm={6} md={4} style={{ flexDirection: "row" }}>
+          <SpeechBubble>
+            <IntroParagraph
               style={{
-                marginTop: "2rem",
-                backgroundColor: "#1FB7FC",
-                color: "#fcfcf9",
-                borderRadius: "12px",
-                textTransform: "none",
+                padding: "1rem",
+                fontSize: "1rem",
+                fontFamily: "'VTCSundaykomixcaps', sans-serif",
+                lineHeight: "1.5",
               }}
             >
-              Let's Talk
-            </Button>
-          </a>
-        </AvatarGrid>
-        {/* </IntroGrid> */}
+              Hi, <br /> I am a junior software engineer with 2 years of experience, I'm looking for opportunities to
+              deliver front-end solutions that meet the unique needs of my clients.
+            </IntroParagraph>
+          </SpeechBubble>
+          <AvatarGrid xs={12} sm={6} md={2} container justifyContent="center" alignItems="center" direction="column">
+            <StyledAvatar sx={{ width: 340, height: 340 }} variant="circular" alt="Remy Sharp" src={ProfileImg} />
+            <a href="mailto:angster770@gmail.com" style={{ textDecoration: "none" }}>
+              <Button
+                variant="contained"
+                style={{
+                  marginTop: "2rem",
+                  backgroundColor: "#1FB7FC",
+                  color: "#fcfcf9",
+                  borderRadius: "12px",
+                  textTransform: "none",
+                  fontFamily: "'VTCSundaykomixcaps', sans-serif",
+                }}
+              >
+                Let's Talk
+              </Button>
+            </a>
+          </AvatarGrid>
+        </IntroGrid>
 
         <AboutMe />
         <MyWork />
