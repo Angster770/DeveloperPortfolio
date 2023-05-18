@@ -5,21 +5,18 @@ import styled from "@emotion/styled"
 const AboutMeContainer = styled(Grid)`
   background-color: #fcfcf9;
   color: #1fb7fc;
-  background-color: #fcfcf9;
-  color: #1fb7fc;
   font-family: proxima-nova, "Helvetica Neue", Helvetica, Arial, sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-bottom: 2rem; /* Add margin-bottom for spacing */
 
   /* Large screens */
   @media (min-width: 56.25rem) {
     /* Styles for screens 900px and above */
     flex-basis: 100%;
     max-width: 100%;
-    // margin-top: 15rem; /* Remove margin-bottom for spacing */
+    padding-top: 10rem;
   }
 `
 
@@ -34,8 +31,8 @@ export const AboutMe: () => JSX.Element = () => {
           style={{ fontFamily: "Helvetica Neue, sans-serif", padding: "1rem", maxWidth: "50%" }}
           variant="body1"
         >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae tellus nec enim eleifend tristique. Nullam
-          interdum vulputate metus,
+          I was born 1996 in Baltimore, Maryland. When not coding I enjoy other things like cooking, reading and
+          practicing violin.
         </Typography>
       </AboutMeContainer>
     </>
