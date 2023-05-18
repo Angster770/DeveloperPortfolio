@@ -50,13 +50,19 @@ const Body = styled(Grid).attrs(() => ({
 `
 
 const IntroGrid = styled(Grid)`
+  background-color: #fcfcf9;
+  display: flex;
+
   /* Small screens */
   @media (max-width: 37.5rem) {
     height: 100vh;
+    flex-direction: column;
   }
   /* Large screens */
   @media (min-width: 56.25rem) {
     /* Styles for screens 900px and above */
+    margin-top: 12rem;
+    flex-direction: row;
     // flex-basis: 50%;
     // max-width: 100%;
   }
@@ -87,25 +93,29 @@ const StyledAvatar = styled(Avatar)`
 `
 const IntroParagraph = styled.div`
   background-color: #fcfcf9;
-  // color: #1fb7fc;
-  // font-family: "In-House Edition", sans-serif";
+  padding: 1rem;
 
+  line-height: 1.5;
+  position: relative;
+  padding-bottom: 10px;
+  border-radius: 10px;
+  max-width: 320px;
   margin: auto;
   box-sizing: border-box;
-  // background: linear-gradient(to bottom right, #2a6f97, #a1c4fd);
 
   /* Small screens */
   @media (max-width: 37.5rem) {
     /* Styles for screens up to 599px wide */
     align-self: center;
-    margin: auto;
+    margin-top: 4rem;
+    margin-bottom: 5rem;
     width: 100%;
     padding: 1.5rem;
   }
   /* Large screens */
   @media (min-width: 56.25rem) {
     /* Styles for screens 900px and above */
-
+    fontsize: 10rem;
     max-width: 400px;
     font-size: 2rem;
     padding: 1.5rem;
@@ -114,43 +124,6 @@ const IntroParagraph = styled.div`
   @media (min-width: 37.5rem) and (max-width: 56.25rem) {
     /* Styles for screens 600px to 899px wide */
   }
-`
-
-const SpeechBubble = styled.div`
-  /* Common styles for both mobile and full screen */
-  // color: #7fc5fd;
-  // background: #7fc5fd;
-  position: relative;
-  padding: 10px;
-  border-radius: 10px;
-  margin: 50px auto;
-  max-width: 320px;
-
-  /* Styles for mobile */
-  // @media (max-width: 768px) {
-  //   &::before {
-  //     content: "";
-  //     position: absolute;
-  //     bottom: -40px;
-  //     left: 50%;
-  //     transform: translateX(-50%);
-  //     border-width: 40px 20px 0;
-  //     border-style: solid;
-  //     border-color: #7fc5fd transparent transparent;
-  //   }
-
-  /* Styles for full screen */
-  // @media (min-width: 769px) {
-  //   &::after {
-  //     content: "";
-  //     position: absolute;
-  //     top: 50%;
-  //     right: -25rem;
-  //     transform: translateY(-50%);
-  //     border-width: 20px 0 20px 400px;
-  //     border-style: solid;
-  //     border-color: transparent transparent transparent #7fc5fd;
-  //   }
 `
 
 export const MainPage: () => JSX.Element = () => {
@@ -165,20 +138,13 @@ export const MainPage: () => JSX.Element = () => {
         columns={{ xs: 1, sm: 1, md: 1 }}
         columnSpacing={{ xs: 1, sm: 1, md: 1 }}
       >
-        <IntroGrid xs={12} sm={6} md={4} style={{ flexDirection: "row" }}>
-          <SpeechBubble>
-            <IntroParagraph
-              style={{
-                padding: "1rem",
-                fontSize: "1rem",
-                fontFamily: "'VTCSundaykomixcaps', sans-serif",
-                lineHeight: "1.5",
-              }}
-            >
-              Hi, <br /> I am a junior software engineer with 2 years of experience, I'm looking for opportunities to
-              deliver front-end solutions that meet the unique needs of my clients.
-            </IntroParagraph>
-          </SpeechBubble>
+        <IntroGrid>
+          {/* <SpeechBubble> */}
+          <IntroParagraph style={{ fontFamily: "VTCSundaykomixcaps, sans-serif" }}>
+            Hi, <br /> I'm looking for opportunities to deliver front-end solutions that meet the unique needs of my
+            clients.
+          </IntroParagraph>
+          {/* </SpeechBubble> */}
           <AvatarGrid xs={12} sm={6} md={2} container justifyContent="center" alignItems="center" direction="column">
             <StyledAvatar sx={{ width: 340, height: 340 }} variant="circular" alt="Remy Sharp" src={ProfileImg} />
             <a href="mailto:angster770@gmail.com" style={{ textDecoration: "none" }}>
