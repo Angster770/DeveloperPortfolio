@@ -50,11 +50,11 @@ const Body = styled(Grid).attrs(() => ({
   }
 `
 
-export const IntroGrid = styled(Grid)`
+const IntroGrid = styled(Grid)`
   @media (min-width: 56.25rem) {
     /* Styles for screens 900px and above */
     flex-basis: 50%;
-    max-width: 50%;
+    max-width: 100%;
   }
 `
 
@@ -68,15 +68,20 @@ const AvatarGrid = styled(Grid)`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-left: 1rem;
+    margin-bottom: 6rem;
   }
 `
 const StyledAvatar = styled(Avatar)`
   width: 360px;
   height: 360px;
   box-shadow: 0 0 130px rgba(0, 0, 0, 0.3);
+  /* Large screens */
+  @media (min-width: 56.25rem) {
+    /* Styles for screens 900px and above */
+    margin-top: 7rem;
+  }
 `
-export const IntroParagraph = styled.div`
+const IntroParagraph = styled.div`
   background-color: #fcfcf9;
   color: #1fb7fc;
   font-family: "proxima-nova,"Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -167,7 +172,6 @@ export const MainPage: () => JSX.Element = () => {
             deliver front-end solutions that meet the unique needs of my clients.
           </IntroParagraph>
         </SpeechBubble>
-        {/* </IntroGrid> */}
         <AvatarGrid xs={12} sm={6} md={2} container justifyContent="center" alignItems="center" direction="column">
           <StyledAvatar sx={{ width: 340, height: 340 }} variant="circular" alt="Remy Sharp" src={ProfileImg} />
           <a href="mailto:angster770@gmail.com" style={{ textDecoration: "none" }}>
@@ -185,7 +189,8 @@ export const MainPage: () => JSX.Element = () => {
             </Button>
           </a>
         </AvatarGrid>
-        <ContactPage />
+        {/* </IntroGrid> */}
+
         <AboutMe />
         <MyWork />
       </Body>

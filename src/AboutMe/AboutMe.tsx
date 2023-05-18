@@ -19,7 +19,7 @@ const AboutMeContainer = styled(Grid)`
     /* Styles for screens 900px and above */
     flex-basis: 100%;
     max-width: 100%;
-    margin-bottom: 0; /* Remove margin-bottom for spacing */
+    // margin-top: 15rem; /* Remove margin-bottom for spacing */
   }
 `
 
