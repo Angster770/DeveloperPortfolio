@@ -14,12 +14,13 @@ const MyWorkContainer = styled(Grid)`
   align-items: center;
   justify-content: center;
   margin-bottom: 2rem; /* Add margin-bottom for spacing */
+  padding-top: 4rem;
+  width: -webkit-fill-available;
 
   /* Large screens */
   @media (min-width: 56.25rem) {
     /* Styles for screens 900px and above */
     flex-basis: 100%;
-    max-width: 100%;
     margin-bottom: 0; /* Remove margin-bottom for spacing */
   }
 `
