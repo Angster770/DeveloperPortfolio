@@ -9,6 +9,7 @@ import Button from "@mui/material/Button"
 import { ContactPage } from "../ContactPageFolder/ContactPage"
 import { AboutMe } from "../AboutMe/AboutMe"
 import { MyWork } from "../MyWork/MyWork"
+import { Footer } from "../Footer/Footer"
 const Body = styled(Grid).attrs(() => ({
   container: true,
 }))`
@@ -167,6 +168,7 @@ export const MainPage: () => JSX.Element = () => {
 
         <AboutMe />
         <MyWork />
+        <Footer />
       </Body>
     </>
   )
