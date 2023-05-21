@@ -64,6 +64,11 @@ const IntroGrid = styled(Grid)`
     height: 100vh;
     flex-direction: column;
   }
+  /* Medium screens */
+  @media (min-width: 37.5rem) and (max-width: 56.25rem) {
+    /* Styles for screens 600px to 899px wide */
+    width: -webkit-fill-available;
+  }
   /* Large screens */
   @media (min-width: 56.25rem) {
     /* Styles for screens 900px and above */
@@ -106,7 +111,7 @@ const IntroParagraph = styled.div`
   position: relative;
   padding-bottom: 10px;
   border-radius: 10px;
-  max-width: 320px;
+  // max-width: 320px;
   margin: auto;
   box-sizing: border-box;
 
@@ -114,8 +119,9 @@ const IntroParagraph = styled.div`
   @media (max-width: 37.5rem) {
     /* Styles for screens up to 599px wide */
     align-self: center;
-    margin-top: 4rem;
-    margin-bottom: 5rem;
+    margin: 0;
+    // margin-top: 4rem;
+    // margin-bottom: 5rem;
     width: 100%;
     padding: 1.5rem;
   }
@@ -130,28 +136,41 @@ const IntroParagraph = styled.div`
   /* Medium screens */
   @media (min-width: 37.5rem) and (max-width: 56.25rem) {
     /* Styles for screens 600px to 899px wide */
+    width: 10rem;
   }
 `
-const animateIntroSection = () => {
-  const introGrid = document.querySelector(".intro-grid")
-  const avatarGrid = document.querySelector(".avatar-grid")
-  const avatar = document.querySelector(".avatar")
-  const introParagraph = document.querySelector(".intro-paragraph")
+export const animateIntroSection = (elementSelector) => {
+  const animate = (element) => {
+    gsap.set(element, { opacity: 0, y: 20 })
 
-  gsap.set([introGrid, avatarGrid, avatar, introParagraph], { opacity: 0, y: 20 })
+    gsap.to(element, {
+      opacity: 1,
+      y: 0,
+      duration: 7,
+      ease: "power3.out",
+      stagger: 0.2,
+    })
+  }
 
-  gsap.to([introGrid, avatarGrid, avatar, introParagraph], {
-    opacity: 1,
-    y: 0,
-    duration: 1,
-    ease: "power3.out",
-    stagger: 0.2,
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const element = entry.target
+        animate(element)
+        observer.unobserve(element)
+      }
+    })
+  })
+
+  const elements = document.querySelectorAll(elementSelector)
+  elements.forEach((element) => {
+    observer.observe(element)
   })
 }
 
 const IntroSection = () => {
   useEffect(() => {
-    animateIntroSection()
+    animateIntroSection(".intro-grid")
   }, [])
 
   return (
@@ -175,12 +194,13 @@ const IntroSection = () => {
             <Button
               variant="contained"
               style={{
-                marginTop: "2rem",
+                marginTop: "1rem",
                 backgroundColor: "#1FB7FC",
                 color: "#fcfcf9",
                 borderRadius: "12px",
                 textTransform: "none",
                 fontFamily: "'VTCSundaykomixcaps', sans-serif",
+                padding: "1rem",
               }}
             >
               Let's Talk
