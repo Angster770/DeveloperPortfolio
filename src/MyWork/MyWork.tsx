@@ -1,7 +1,8 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { Typography, Paper, Grid } from "@mui/material"
 import styled from "@emotion/styled"
 import GitHubIcon from "@mui/icons-material/GitHub"
+import { animateIntroSection } from "../LandingPage/MainPage"
 
 const MyWorkContainer = styled(Grid)`
   background-color: #fcfcf9;
@@ -13,8 +14,9 @@ const MyWorkContainer = styled(Grid)`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-bottom: 2rem; /* Add margin-bottom for spacing */
   padding-top: 4rem;
+  // margin-bottom: 2rem; /* Add margin-bottom for spacing */
+  // padding-top: 4rem;
   width: -webkit-fill-available;
 
   /* Large screens */
@@ -26,10 +28,13 @@ const MyWorkContainer = styled(Grid)`
 `
 
 export const MyWork: () => JSX.Element = () => {
+  useEffect(() => {
+    animateIntroSection(".my-work-container")
+  }, [])
   return (
     <>
-      <MyWorkContainer>
-        <Typography style={{ fontFamily: "Helvetica Neue, sans-serif" }} variant="h4" gutterBottom>
+      <MyWorkContainer className="my-work-container">
+        <Typography style={{ fontFamily: "Helvetica Neue, sans-serif" }} variant="h2" gutterBottom>
           My Work
         </Typography>
         <a href="https://github.com/Angster770/DeveloperPortfolio" target="_blank" rel="noopener noreferrer">
