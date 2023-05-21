@@ -13,11 +13,18 @@ const StyledNavbar = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0 1rem 0.5rem;
   height: 4rem;
-  padding: 0 1rem .5rem;
+  @media (max-width: 767px) and (orientation: landscape) {
+  /* CSS rules for phones in landscape mode */
+  height: 5rem;
+  padding: 0 1rem 2rem;
+}
+
 `
 
 const MobileScreenBarContainer = styled("div")`
+  align-items: center;
   display: flex;
   background-color: #7fc5fd;
   color: #fff;
