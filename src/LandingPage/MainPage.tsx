@@ -1,4 +1,6 @@
-import React, { FC } from "react"
+import React, { useEffect, useRef } from "react"
+import { gsap } from "gsap"
+import ScrollTrigger from "gsap/dist/ScrollTrigger"
 import styled from "styled-components"
 import Grid from "@mui/material/Unstable_Grid2" // Grid version 2interface MainPageProps {}
 import Avatar from "@mui/material/Avatar"
@@ -54,6 +56,9 @@ const IntroGrid = styled(Grid)`
   background-color: #fcfcf9;
   display: flex;
 
+  // opacity: 0;
+  // transition: opacity 0.5s ease;
+
   /* Small screens */
   @media (max-width: 37.5rem) {
     height: 100vh;
@@ -82,8 +87,9 @@ const AvatarGrid = styled(Grid)`
   }
 `
 const StyledAvatar = styled(Avatar)`
-  width: 360px;
-  height: 360px;
+  width: 100%;
+  max-width: 360px;
+  height: auto;
 
   box-shadow: 0 0 130px rgba(0, 0, 0, 0.3);
   /* Large screens */
@@ -126,6 +132,65 @@ const IntroParagraph = styled.div`
     /* Styles for screens 600px to 899px wide */
   }
 `
+const animateIntroSection = () => {
+  const introGrid = document.querySelector(".intro-grid")
+  const avatarGrid = document.querySelector(".avatar-grid")
+  const avatar = document.querySelector(".avatar")
+  const introParagraph = document.querySelector(".intro-paragraph")
+
+  gsap.set([introGrid, avatarGrid, avatar, introParagraph], { opacity: 0, y: 20 })
+
+  gsap.to([introGrid, avatarGrid, avatar, introParagraph], {
+    opacity: 1,
+    y: 0,
+    duration: 1,
+    ease: "power3.out",
+    stagger: 0.2,
+  })
+}
+
+const IntroSection = () => {
+  useEffect(() => {
+    animateIntroSection()
+  }, [])
+
+  return (
+    <>
+      <IntroGrid className="intro-grid">
+        {/* <SpeechBubble> */}
+        <IntroParagraph style={{ fontFamily: "VTCSundaykomixcaps, sans-serif" }} className="intro-paragraph">
+          Hi, <br /> I am looking for opportunities to deliver front-end solutions that meet the unique needs of my
+          clients.
+        </IntroParagraph>
+        {/* </SpeechBubble> */}
+        <AvatarGrid className="avatar-grid" container justifyContent="center" alignItems="center" direction="column">
+          <StyledAvatar
+            sx={{ width: 340, height: 340 }}
+            variant="circular"
+            alt="Remy Sharp"
+            src={ProfileImg}
+            className="avatar"
+          />
+          <a href="mailto:angster770@gmail.com" style={{ textDecoration: "none" }}>
+            <Button
+              variant="contained"
+              style={{
+                marginTop: "2rem",
+                backgroundColor: "#1FB7FC",
+                color: "#fcfcf9",
+                borderRadius: "12px",
+                textTransform: "none",
+                fontFamily: "'VTCSundaykomixcaps', sans-serif",
+              }}
+            >
+              Let's Talk
+            </Button>
+          </a>
+        </AvatarGrid>
+      </IntroGrid>
+    </>
+  )
+}
 
 export const MainPage: () => JSX.Element = () => {
   return (
@@ -139,33 +204,7 @@ export const MainPage: () => JSX.Element = () => {
         columns={{ xs: 1, sm: 1, md: 1 }}
         columnSpacing={{ xs: 1, sm: 1, md: 1 }}
       >
-        <IntroGrid>
-          {/* <SpeechBubble> */}
-          <IntroParagraph style={{ fontFamily: "VTCSundaykomixcaps, sans-serif" }}>
-            Hi, <br /> I am looking for opportunities to deliver front-end solutions that meet the unique needs of my
-            clients.
-          </IntroParagraph>
-          {/* </SpeechBubble> */}
-          <AvatarGrid xs={12} sm={6} md={2} container justifyContent="center" alignItems="center" direction="column">
-            <StyledAvatar sx={{ width: 340, height: 340 }} variant="circular" alt="Remy Sharp" src={ProfileImg} />
-            <a href="mailto:angster770@gmail.com" style={{ textDecoration: "none" }}>
-              <Button
-                variant="contained"
-                style={{
-                  marginTop: "2rem",
-                  backgroundColor: "#1FB7FC",
-                  color: "#fcfcf9",
-                  borderRadius: "12px",
-                  textTransform: "none",
-                  fontFamily: "'VTCSundaykomixcaps', sans-serif",
-                }}
-              >
-                Let's Talk
-              </Button>
-            </a>
-          </AvatarGrid>
-        </IntroGrid>
-
+        <IntroSection />
         <AboutMe />
         <MyWork />
         <Footer />
