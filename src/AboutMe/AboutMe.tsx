@@ -5,17 +5,22 @@ import { animateIntroSection } from "../LandingPage/MainPage"
 
 const AboutMeContainer = styled(Grid)`
   background-color: #fcfcf9;
-  color: #1fb7fc;
+  color: #333333;
   font-family: proxima-nova, "Helvetica Neue", Helvetica, Arial, sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  // height: 100vh;
   padding-top: 10rem;
   // margin-bottom: 8rem;
   padding-bottom: 10rem;
-  font-size: 10rem /* Large screens */ @media (min-width: 56.25rem) {
+  font-size: 10rem
+   flex-basis: 100%;
+    max-width: 100%;
+    padding-top: 10rem;
+   /* Large screens */ 
+   @media (min-width: 56.25rem) {
     /* Styles for screens 900px and above */
     flex-basis: 100%;
     max-width: 100%;
@@ -25,17 +30,21 @@ const AboutMeContainer = styled(Grid)`
 
 export const AboutMe: () => JSX.Element = () => {
   useEffect(() => {
-    animateIntroSection(".about-me")
+    animateIntroSection(".about-me-class")
   }, [])
   return (
     <>
-      <AboutMeContainer className="about-me">
-        <Typography style={{ fontFamily: "Helvetica Neue, sans-serif" }} variant="h2" gutterBottom>
+      <AboutMeContainer className="about-me-class" id="about-me-id">
+        <Typography style={{ fontFamily: "'VTCSundaykomixcaps', sans-serif" }} variant="h2" gutterBottom>
           About Me
         </Typography>
-        <Typography style={{ fontFamily: "Helvetica Neue, sans-serif", padding: "1rem", maxWidth: "50%" }} variant="h4">
-          I was born 1996 in Baltimore, Maryland. When not coding I enjoy other things like cooking, reading and
-          practicing violin.
+        <Typography
+          style={{ fontFamily: "VTCSundaykomixcaps, sans-serif", padding: "1rem", maxWidth: "80%", lineHeight: "1.5" }}
+          variant="h5"
+        >
+          My name is Menachem Angster, I am currently-based between New York City and Corvallis Oregon. I grew up in the
+          Baltimore area and was educated both here in the United States and abroad. I studied React Typescript and
+          spent time as an intern with Eval, supported by two seasoned mentors.
         </Typography>
       </AboutMeContainer>
     </>
