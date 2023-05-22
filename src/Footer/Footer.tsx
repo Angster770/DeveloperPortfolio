@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react"
 import { AppBar, BottomNavigation, Toolbar, Typography } from "@mui/material"
 import GitHubIcon from "@mui/icons-material/GitHub"
 import styled from "styled-components"
+import LinkedInIcon from "@mui/icons-material/LinkedIn"
 
 const FooterContainer = styled(BottomNavigation)`
   position: relative;
@@ -53,10 +54,14 @@ export const Footer = () => {
         </Typography>
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
           <a href="https://github.com/Angster770/DeveloperPortfolio" target="_blank" rel="noopener noreferrer">
-            <GitHubIcon style={{ marginLeft: "0.5rem" }} />
-            {/* <Typography align="center" variant="body1">
-              Link to My Repo
-            </Typography> */}
+            <Typography style={{ color: "#333333" }} align="center" variant="body1">
+              <GitHubIcon style={{ color: "inherit", textDecoration: "none" }} />
+            </Typography>
+          </a>
+          <a href="https://www.linkedin.com/in/menachem-angster-b2a082278" target="_blank" rel="noopener noreferrer">
+            <Typography style={{ color: "#333333" }} align="center" variant="body1">
+              <LinkedInIcon style={{ color: "inherit", textDecoration: "none" }} />
+            </Typography>
           </a>
         </div>
       </BottomNavigation>
