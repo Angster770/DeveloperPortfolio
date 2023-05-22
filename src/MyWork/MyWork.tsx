@@ -47,25 +47,21 @@ export const MyWork: () => JSX.Element = () => {
               color: "#333333;",
               fontFamily: "VTCSundaykomixcaps, sans-serif",
               padding: "1rem",
+              lineHeight: "3.5",
             }}
-            // variant="body1"
           >
             <Typography
               style={{
                 fontFamily: "VTCSundaykomixcaps, sans-serif",
                 padding: "1rem",
                 maxWidth: "80%",
-                lineHeight: "3.5",
               }}
               variant="h5"
             >
               Experience:
             </Typography>
-            <Typography style={{ fontFamily: "VTCSundaykomixcaps, sans-serif" }} variant="h6">
-              Sept 2022 - Junior Software Engineer with Eval
-            </Typography>
             <Typography style={{ fontFamily: "VTCSundaykomixcaps, sans-serif", fontSize: "smaller" }} variant="h6">
-              Download My Resume{" "}
+              Download My Resume
             </Typography>
             <Typography
               style={{
@@ -83,6 +79,10 @@ export const MyWork: () => JSX.Element = () => {
                 <PictureAsPdfIcon />
               </a>
             </Typography>
+            <Typography style={{ fontFamily: "VTCSundaykomixcaps, sans-serif" }} variant="h6">
+              Sept 2022 - Junior Software Engineer with Eval
+            </Typography>
+
             <Typography>
               <ul>
                 <li> Fixed frontend bugs, ensuring a smooth project execution and friendly user experience.</li>
