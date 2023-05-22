@@ -3,20 +3,22 @@ import { Typography, Paper, Grid } from "@mui/material"
 import styled from "@emotion/styled"
 import GitHubIcon from "@mui/icons-material/GitHub"
 import { animateIntroSection } from "../LandingPage/MainPage"
+import { createTheme, ThemeProvider } from "@mui/material"
 
+const theme = createTheme({
+  typography: {
+    fontFamily: "VTCSundaykomixcaps, sans-serif",
+  },
+})
 const MyWorkContainer = styled(Grid)`
   background-color: #fcfcf9;
-  color: #1fb7fc;
+  color: #333333;
   font-family: proxima-nova, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  background-color: #fcfcf9;
-  color: #1fb7fc;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding-top: 4rem;
-  // margin-bottom: 2rem; /* Add margin-bottom for spacing */
-  // padding-top: 4rem;
   width: -webkit-fill-available;
 
   /* Large screens */
@@ -33,25 +35,70 @@ export const MyWork: () => JSX.Element = () => {
   }, [])
   return (
     <>
-      <MyWorkContainer className="my-work-container">
-        <Typography style={{ fontFamily: "Helvetica Neue, sans-serif" }} variant="h2" gutterBottom>
+      <MyWorkContainer className="my-work-container" id="my-work">
+        <Typography style={{ fontFamily: "VTCSundaykomixcaps, sans-serif" }} variant="h2">
           My Work
         </Typography>
-        <a href="https://github.com/Angster770/DeveloperPortfolio" target="_blank" rel="noopener noreferrer">
-          <Typography
+        <ThemeProvider theme={theme}>
+          <Grid
             style={{
-              textDecoration: "none",
-              color: "#1fb7fc",
-              fontFamily: "Helvetica Neue, sans-serif",
+              color: "#333333;",
+              fontFamily: "VTCSundaykomixcaps, sans-serif",
               padding: "1rem",
             }}
-            variant="body1"
+            // variant="body1"
           >
-            <GitHubIcon />
-            Check Out My Repo Here
-          </Typography>
-        </a>
+            <Typography
+              style={{
+                fontFamily: "VTCSundaykomixcaps, sans-serif",
+                padding: "1rem",
+                maxWidth: "80%",
+                lineHeight: "3.5",
+              }}
+              variant="h5"
+            >
+              Experience:
+            </Typography>
+            <Typography>
+              <ul>
+                <li> Fixed frontend bugs, ensuring a smooth project execution and freindly user experience.</li>
+                <li>Implemented Storybook, resulting in more efficient component development and styling process.</li>
+                <li>
+                  Created frontend components for the grading section, enhancing functionality and user interaction.
+                </li>
+                <li>
+                  Designed components in alignment with GraphQL data schema, facilitating data integration and
+                  manipulation.
+                </li>
+                <li>
+                  Created frontend components for the grading section, enhancing functionality and user interaction.
+                </li>
+                <li>
+                  Created frontend components for the grading section, enhancing functionality and user interaction.
+                </li>
+              </ul>
+            </Typography>
+            <Typography>Skills: </Typography>
+            <Typography>
+              <ul>
+                <li>UI Implementation: Styled React components using TypeScript, adherening to Figma designs.</li>
+                <li>
+                  GraphQL: Worked with GraphQL to retrieve and manipulate data, designed and implemented GraphQL schemas
+                  to fulfill project data.
+                </li>
+                <li>Debugging: Identified and resolved front-end bugs through a logical step-by-step process.</li>
+                <li>
+                  Collaboration Skills: Adaptable in working collaboratively with team members, ensuring successful
+                  project outcomes through effective communication.
+                </li>
+              </ul>
+            </Typography>
+            {/* <GitHubIcon />
+            Check Out My Repo Here */}
+          </Grid>
+        </ThemeProvider>
       </MyWorkContainer>
+      {/* <a href="https://github.com/Angster770/DeveloperPortfolio" target="_blank" rel="noopener noreferrer"></a> */}
     </>
   )
 }
