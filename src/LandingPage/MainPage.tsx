@@ -61,7 +61,7 @@ const IntroGrid = styled(Grid)`
 
   /* Small screens */
   @media (max-width: 37.5rem) {
-    height: 100vh;
+    // height: 100vh;
     flex-direction: column;
   }
   /* Medium screens */
@@ -196,7 +196,7 @@ const IntroSection = () => {
               style={{
                 marginTop: "1rem",
                 backgroundColor: "#1FB7FC",
-                color: "#fcfcf9",
+                color: "#333333",
                 borderRadius: "12px",
                 textTransform: "none",
                 fontFamily: "'VTCSundaykomixcaps', sans-serif",
