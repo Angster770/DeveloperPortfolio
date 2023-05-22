@@ -4,6 +4,8 @@ import styled from "@emotion/styled"
 import GitHubIcon from "@mui/icons-material/GitHub"
 import { animateIntroSection } from "../LandingPage/MainPage"
 import { createTheme, ThemeProvider } from "@mui/material"
+import MenachemAngsterResume from "../PDF/MenachemAngsterResume.pdf"
+import PictureAsPdfIcon from "@mui/icons-material/PictureAsPdf"
 
 const theme = createTheme({
   typography: {
@@ -59,9 +61,12 @@ export const MyWork: () => JSX.Element = () => {
             >
               Experience:
             </Typography>
+            <Typography style={{ fontFamily: "VTCSundaykomixcaps, sans-serif" }} variant="h6">
+              Sept 2022 - Junior Software Engineer with Eval
+            </Typography>
             <Typography>
               <ul>
-                <li> Fixed frontend bugs, ensuring a smooth project execution and freindly user experience.</li>
+                <li> Fixed frontend bugs, ensuring a smooth project execution and friendly user experience.</li>
                 <li>Implemented Storybook, resulting in more efficient component development and styling process.</li>
                 <li>
                   Created frontend components for the grading section, enhancing functionality and user interaction.
@@ -78,7 +83,17 @@ export const MyWork: () => JSX.Element = () => {
                 </li>
               </ul>
             </Typography>
-            <Typography>Skills: </Typography>
+            <Typography
+              style={{
+                fontFamily: "VTCSundaykomixcaps, sans-serif",
+                padding: "1rem",
+                maxWidth: "80%",
+                lineHeight: "3.5",
+              }}
+              variant="h5"
+            >
+              Skills:
+            </Typography>
             <Typography>
               <ul>
                 <li>UI Implementation: Styled React components using TypeScript, adherening to Figma designs.</li>
@@ -97,6 +112,22 @@ export const MyWork: () => JSX.Element = () => {
             Check Out My Repo Here */}
           </Grid>
         </ThemeProvider>
+        <Typography
+          style={{
+            color: "inherit",
+            textDecoration: "none",
+            fontFamily: "VTCSundaykomixcaps, sans-serif",
+          }}
+        >
+          <a
+            style={{ color: "inherit", textDecoration: "none" }}
+            href={MenachemAngsterResume}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <PictureAsPdfIcon />
+          </a>
+        </Typography>
       </MyWorkContainer>
       {/* <a href="https://github.com/Angster770/DeveloperPortfolio" target="_blank" rel="noopener noreferrer"></a> */}
     </>
