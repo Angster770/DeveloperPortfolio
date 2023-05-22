@@ -3,13 +3,13 @@ import styled from "styled-components"
 import Typography from "@mui/material/Typography"
 import Button from "@mui/material/Button"
 import { GiHamburgerMenu } from "react-icons/gi"
-import { Box, Breadcrumbs, Link, useMediaQuery, Drawer, List, ListItem, ListItemText } from "@mui/material"
-import { Link as LinkRouter } from "react-router-dom"
+import { Box, Breadcrumbs, useMediaQuery, Drawer, List, ListItem, ListItemText } from "@mui/material"
+import { Link, animateScroll } from "react-scroll"
 
 const StyledNavbar = styled.nav`
   background-color: #7fc5fd;
   color: #fcfcf9
-  font-family: proxima-nova,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-family: "'VTCSundaykomixcaps', sans-serif";
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -28,7 +28,7 @@ const MobileScreenBarContainer = styled("div")`
   display: flex;
   background-color: #7fc5fd;
   color: #fff;
-  font-family: proxima-nova, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: proxima-nova, "'VTCSundaykomixcaps', sans-serif";
 `
 const HamburgerIcon = styled(GiHamburgerMenu)`
   @media (max-width: 400px) {
@@ -47,13 +47,14 @@ const MyName: FC = () => {
         variant="h6"
         component="div"
         sx={{
-          color: "#fcfcf9",
+          color: "#333333",
           fontWeight: 600,
           fontSize: "1.5rem",
           maxWidth: "100%",
           overflow: "hidden",
           textOverflow: "ellipsis",
           whiteSpace: "nowrap",
+          fontFamily: "'VTCSundaykomixcaps', sans-serif",
         }}
       >
         <Box>Menachem Angster</Box>
@@ -66,11 +67,29 @@ const FullScreenNavbar: FC = () => {
   return (
     <>
       <MyName />
-      <Breadcrumbs style={{ color: "#fcfcf9" }}>
-        <Link color="inherit" href="#" underline="none">
+      <Breadcrumbs style={{ color: "#333333", fontFamily: "'VTCSundaykomixcaps', sans-serif" }}>
+        <Link
+          style={{ color: "inherit", textDecoration: "none" }}
+          to="about-me-id"
+          smooth={true}
+          duration={500}
+          offset={0}
+          color="inherit"
+          href="#"
+          underline="none"
+        >
           About Me
         </Link>
-        <Link color="inherit" href="#" underline="none">
+        <Link
+          style={{ color: "inherit", textDecoration: "none" }}
+          to="my-work"
+          smooth={true}
+          duration={500}
+          offset={0}
+          color="inherit"
+          href="my-work"
+          underline="none"
+        >
           My Work
         </Link>
       </Breadcrumbs>
@@ -102,11 +121,59 @@ const MobileScreenBar: FC = () => {
           PaperProps={{ style: { backgroundColor: "#7fc5fd", color: "#fcfcf9" } }}
         >
           <List>
-            <ListItem button onClick={handleClose}>
-              <ListItemText>About Me</ListItemText>
+            <ListItem
+              button
+              onClick={(event) => {
+                handleClose()
+                event.preventDefault()
+              }}
+            >
+              <ListItemText>
+                <Link
+                  to="about-me-id"
+                  smooth={true}
+                  duration={500}
+                  offset={30}
+                  color="inherit"
+                  href="#"
+                  underline="none"
+                  style={{ color: "inherit", textDecoration: "none" }}
+                  onClick={() => {
+                    handleClose()
+                    animateScroll.scrollTo("about-me-id", {
+                      smooth: true,
+                      duration: 500,
+                      offset: -50,
+                    })
+                  }}
+                >
+                  About Me
+                </Link>
+              </ListItemText>
             </ListItem>
             <ListItem button onClick={handleClose}>
-              <ListItemText>My Work</ListItemText>
+              <ListItemText>
+                <Link
+                  to="my-work"
+                  smooth={true}
+                  duration={500}
+                  offset={0}
+                  color="inherit"
+                  href="#"
+                  underline="none"
+                  style={{ color: "inherit", textDecoration: "none" }}
+                  onClick={() => {
+                    handleClose()
+                    animateScroll.scrollTo("about-me-id", {
+                      smooth: true,
+                      duration: 500,
+                      offset: -50,
+                    })
+                  }}
+                >
+                  My Work
+                </Link>
+              </ListItemText>
             </ListItem>
           </List>
           <div style={{ background: "#7fc5fd" }} />
@@ -128,6 +195,7 @@ export const Navbar: FC = () => {
           alignItems: "center",
           justifyContent: "space-between",
           flexGrow: 1,
+          fontFamily: "'VTCSundaykomixcaps', sans-serif",
         }}
       >
         {isSmallScreen ? <MobileScreenBar /> : <FullScreenNavbar />}{" "}
