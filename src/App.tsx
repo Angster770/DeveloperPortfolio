@@ -2,7 +2,6 @@ import React from "react"
 import { MainPage } from "./LandingPage/MainPage"
 import "./App.css"
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
-import { ContactPage } from "./ContactPageFolder/ContactPage"
 
 function App() {
   return (
@@ -11,7 +10,6 @@ function App() {
       <Routes>
         <Route path="/" element={<MainPage />} />
         {/* <Route path="/about" element={<About />} /> */}
-        <Route path="/contact" element={<ContactPage />} />
       </Routes>
       {/* </Router> */}
 
