@@ -64,6 +64,25 @@ export const MyWork: () => JSX.Element = () => {
             <Typography style={{ fontFamily: "VTCSundaykomixcaps, sans-serif" }} variant="h6">
               Sept 2022 - Junior Software Engineer with Eval
             </Typography>
+            <Typography style={{ fontFamily: "VTCSundaykomixcaps, sans-serif", fontSize: "smaller" }} variant="h6">
+              Download My Resume{" "}
+            </Typography>
+            <Typography
+              style={{
+                color: "inherit",
+                textDecoration: "none",
+                fontFamily: "VTCSundaykomixcaps, sans-serif",
+              }}
+            >
+              <a
+                style={{ color: "inherit", textDecoration: "none" }}
+                href={MenachemAngsterResume}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <PictureAsPdfIcon />
+              </a>
+            </Typography>
             <Typography>
               <ul>
                 <li> Fixed frontend bugs, ensuring a smooth project execution and friendly user experience.</li>
@@ -112,22 +131,6 @@ export const MyWork: () => JSX.Element = () => {
             Check Out My Repo Here */}
           </Grid>
         </ThemeProvider>
-        <Typography
-          style={{
-            color: "inherit",
-            textDecoration: "none",
-            fontFamily: "VTCSundaykomixcaps, sans-serif",
-          }}
-        >
-          <a
-            style={{ color: "inherit", textDecoration: "none" }}
-            href={MenachemAngsterResume}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <PictureAsPdfIcon />
-          </a>
-        </Typography>
       </MyWorkContainer>
       {/* <a href="https://github.com/Angster770/DeveloperPortfolio" target="_blank" rel="noopener noreferrer"></a> */}
     </>
