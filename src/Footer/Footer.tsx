@@ -51,12 +51,14 @@ export const Footer = () => {
         <Typography align="center">
           <span>&#169;</span> Menachem Angster
         </Typography>
-        <a href="https://github.com/Angster770/DeveloperPortfolio" target="_blank" rel="noopener noreferrer">
-          <Typography align="center" variant="body1">
-            <GitHubIcon />
-            Check Out My Repo Here
-          </Typography>
-        </a>
+        <div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
+          <a href="https://github.com/Angster770/DeveloperPortfolio" target="_blank" rel="noopener noreferrer">
+            <GitHubIcon style={{ marginLeft: "0.5rem" }} />
+            {/* <Typography align="center" variant="body1">
+              Link to My Repo
+            </Typography> */}
+          </a>
+        </div>
       </BottomNavigation>
     </>
   )
