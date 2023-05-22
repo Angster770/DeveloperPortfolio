@@ -59,7 +59,11 @@ export const Footer = () => {
             rel="noopener noreferrer"
             style={{ textDecoration: "none" }}
           >
-            <Typography style={{ color: "#333333" }} align="center" variant="body1">
+            <Typography
+              style={{ color: "#333333", display: "flex", flexDirection: "row" }}
+              align="center"
+              variant="body1"
+            >
               <Typography style={{ color: "#333333" }} align="center" variant="body1">
                 My Github
               </Typography>
@@ -72,7 +76,11 @@ export const Footer = () => {
             rel="noopener noreferrer"
             style={{ textDecoration: "none" }}
           >
-            <Typography style={{ color: "#333333" }} align="center" variant="body1">
+            <Typography
+              style={{ color: "#333333", display: "flex", flexDirection: "row" }}
+              align="center"
+              variant="body1"
+            >
               <Typography style={{ color: "#333333" }} align="center" variant="body1">
                 My LinkedIn
               </Typography>
