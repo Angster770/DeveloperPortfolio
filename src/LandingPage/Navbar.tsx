@@ -20,7 +20,7 @@ const StyledNavbar = styled.nav`
   height: 5rem;
   padding: 0 1rem 2rem;
 }
-@media (min-width: 601px) and (max-width: 1920px) {
+@media (min-width: 601px) and (max-width: 900px) {
   /* CSS rules for screens between 768px and 1920px width */
   /* Adjust the styles as per your requirements */
   /* Example styles */
