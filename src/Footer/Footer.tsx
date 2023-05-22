@@ -53,14 +53,30 @@ export const Footer = () => {
           <span>&#169;</span> Menachem Angster
         </Typography>
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
-          <a href="https://github.com/Angster770/DeveloperPortfolio" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://github.com/Angster770/DeveloperPortfolio"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ textDecoration: "none" }}
+          >
             <Typography style={{ color: "#333333" }} align="center" variant="body1">
-              <GitHubIcon style={{ color: "inherit", textDecoration: "none" }} />
+              <Typography style={{ color: "#333333" }} align="center" variant="body1">
+                My Github
+              </Typography>
+              <GitHubIcon style={{ color: "inherit" }} />
             </Typography>
           </a>
-          <a href="https://www.linkedin.com/in/menachem-angster-b2a082278" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://www.linkedin.com/in/menachem-angster-b2a082278"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ textDecoration: "none" }}
+          >
             <Typography style={{ color: "#333333" }} align="center" variant="body1">
-              <LinkedInIcon style={{ color: "inherit", textDecoration: "none" }} />
+              <Typography style={{ color: "#333333" }} align="center" variant="body1">
+                My LinkedIn
+              </Typography>
+              <LinkedInIcon style={{ color: "inherit" }} />
             </Typography>
           </a>
         </div>
