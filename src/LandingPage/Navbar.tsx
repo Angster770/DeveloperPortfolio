@@ -46,7 +46,16 @@ const HamburgerIcon = styled(GiHamburgerMenu)`
     margin-left: 7rem;
   }
 `
-
+const LinkFullScreen = styled(Link)`
+  color: inherit;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+`
+const LinkFullScreenText = styled.div`
+  &:hover {
+    transform: translateY(-1px);
+  }
+`
 const MyName: FC = () => {
   return (
     <>
@@ -75,8 +84,7 @@ const FullScreenNavbar: FC = () => {
     <>
       <MyName />
       <Breadcrumbs style={{ color: "#333333", fontFamily: "Helvetica, Arial, sans-serif" }}>
-        <Link
-          style={{ color: "inherit", textDecoration: "none" }}
+        <LinkFullScreen
           to="about-me-id"
           smooth={true}
           duration={500}
@@ -85,8 +93,8 @@ const FullScreenNavbar: FC = () => {
           href="#"
           underline="none"
         >
-          About Me
-        </Link>
+          <LinkFullScreenText> About Me</LinkFullScreenText>
+        </LinkFullScreen>
         <Link
           style={{ color: "inherit", textDecoration: "none" }}
           to="my-work"
@@ -97,7 +105,7 @@ const FullScreenNavbar: FC = () => {
           href="my-work"
           underline="none"
         >
-          My Work
+          <LinkFullScreenText>My Work</LinkFullScreenText>
         </Link>
       </Breadcrumbs>
     </>
