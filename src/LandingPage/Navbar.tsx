@@ -9,7 +9,7 @@ import { Link, animateScroll } from "react-scroll"
 const StyledNavbar = styled.nav`
   background-color: #7fc5fd;
   color: #fcfcf9
-  font-family: "'VTCSundaykomixcaps', sans-serif";
+  font-family:  "Helvetica, Arial, sans-serif";
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -35,7 +35,7 @@ const MobileScreenBarContainer = styled("div")`
   display: flex;
   background-color: #7fc5fd;
   color: #fff;
-  font-family: proxima-nova, "'VTCSundaykomixcaps', sans-serif";
+  font-family: "Helvetica, Arial, sans-serif";
 `
 const HamburgerIcon = styled(GiHamburgerMenu)`
   @media (max-width: 400px) {
@@ -61,7 +61,7 @@ const MyName: FC = () => {
           overflow: "hidden",
           textOverflow: "ellipsis",
           whiteSpace: "nowrap",
-          fontFamily: "'VTCSundaykomixcaps', sans-serif",
+          fontFamily: "Helvetica, Arial, sans-serif",
         }}
       >
         <Box>Menachem Angster</Box>
@@ -74,7 +74,7 @@ const FullScreenNavbar: FC = () => {
   return (
     <>
       <MyName />
-      <Breadcrumbs style={{ color: "#333333", fontFamily: "'VTCSundaykomixcaps', sans-serif" }}>
+      <Breadcrumbs style={{ color: "#333333", fontFamily: "Helvetica, Arial, sans-serif" }}>
         <Link
           style={{ color: "inherit", textDecoration: "none" }}
           to="about-me-id"
@@ -202,7 +202,7 @@ export const Navbar: FC = () => {
           alignItems: "center",
           justifyContent: "space-between",
           flexGrow: 1,
-          fontFamily: "'VTCSundaykomixcaps', sans-serif",
+          fontFamily: "Helvetica, Arial, sans-serif",
         }}
       >
         {isSmallScreen ? <MobileScreenBar /> : <FullScreenNavbar />}{" "}

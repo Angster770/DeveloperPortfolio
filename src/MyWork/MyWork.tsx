@@ -9,13 +9,13 @@ import PictureAsPdfIcon from "@mui/icons-material/PictureAsPdf"
 
 const theme = createTheme({
   typography: {
-    fontFamily: "VTCSundaykomixcaps, sans-serif",
+    fontFamily: "Helvetica, Arial, sans-serif",
   },
 })
 const MyWorkContainer = styled(Grid)`
   background-color: #fcfcf9;
   color: #333333;
-  font-family: proxima-nova, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: proxima-nova, "Helvetica, Arial, sans-serif";
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -38,21 +38,21 @@ export const MyWork: () => JSX.Element = () => {
   return (
     <>
       <MyWorkContainer className="my-work-container" id="my-work">
-        <Typography style={{ fontFamily: "VTCSundaykomixcaps, sans-serif" }} variant="h2">
+        <Typography style={{ fontFamily: "Helvetica, Arial, sans-serif" }} variant="h2">
           My Work
         </Typography>
         <ThemeProvider theme={theme}>
           <Grid
             style={{
               color: "#333333;",
-              fontFamily: "VTCSundaykomixcaps, sans-serif",
+              fontFamily: "Helvetica, Arial, sans-serif",
               padding: "1rem",
               lineHeight: "3.5",
             }}
           >
             <Typography
               style={{
-                fontFamily: "VTCSundaykomixcaps, sans-serif",
+                fontFamily: "Helvetica, Arial, sans-serif",
                 padding: "1rem",
                 maxWidth: "80%",
               }}
@@ -60,14 +60,18 @@ export const MyWork: () => JSX.Element = () => {
             >
               Experience:
             </Typography>
-            <Typography style={{ fontFamily: "VTCSundaykomixcaps, sans-serif", fontSize: "smaller" }} variant="h6">
+            <Typography
+              style={{ fontFamily: "Helvetica, Arial, sans-serif", fontSize: "smaller", marginLeft: "2rem" }}
+              variant="h6"
+            >
               Download My Resume
             </Typography>
             <Typography
               style={{
                 color: "inherit",
                 textDecoration: "none",
-                fontFamily: "VTCSundaykomixcaps, sans-serif",
+                fontFamily: "Helvetica, Arial, sans-serif",
+                marginLeft: "2rem",
               }}
             >
               <a
@@ -79,7 +83,7 @@ export const MyWork: () => JSX.Element = () => {
                 <PictureAsPdfIcon />
               </a>
             </Typography>
-            <Typography style={{ fontFamily: "VTCSundaykomixcaps, sans-serif" }} variant="h6">
+            <Typography style={{ fontFamily: "Helvetica, Arial, sans-serif" }} variant="h6">
               Sept 2022 - Junior Software Engineer with Eval
             </Typography>
 
@@ -104,7 +108,7 @@ export const MyWork: () => JSX.Element = () => {
             </Typography>
             <Typography
               style={{
-                fontFamily: "VTCSundaykomixcaps, sans-serif",
+                fontFamily: "Helvetica, Arial, sans-serif",
                 padding: "1rem",
                 maxWidth: "80%",
                 lineHeight: "3.5",

@@ -176,7 +176,7 @@ const IntroSection = () => {
     <>
       <IntroGrid className="intro-grid">
         {/* <SpeechBubble> */}
-        <IntroParagraph style={{ fontFamily: "VTCSundaykomixcaps, sans-serif" }} className="intro-paragraph">
+        <IntroParagraph style={{ fontFamily: "Helvetica, Arial, sans-serif" }} className="intro-paragraph">
           Hi, <br /> I am looking for opportunities to deliver front-end solutions that meet the unique needs of my
           clients.
         </IntroParagraph>
@@ -198,7 +198,7 @@ const IntroSection = () => {
                 color: "#333333",
                 borderRadius: "12px",
                 textTransform: "none",
-                fontFamily: "'VTCSundaykomixcaps', sans-serif",
+                fontFamily: "Helvetica, Arial, sans-serif",
                 padding: "1rem",
               }}
             >

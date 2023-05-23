@@ -6,7 +6,7 @@ import { animateIntroSection } from "../LandingPage/MainPage"
 const AboutMeContainer = styled(Grid)`
   background-color: #fcfcf9;
   color: #333333;
-  font-family: proxima-nova, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Helvetica, Arial, sans-serif"
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -35,11 +35,11 @@ export const AboutMe: () => JSX.Element = () => {
   return (
     <>
       <AboutMeContainer className="about-me-class" id="about-me-id">
-        <Typography style={{ fontFamily: "'VTCSundaykomixcaps', sans-serif" }} variant="h2" gutterBottom>
+        <Typography style={{ fontFamily: "Helvetica, Arial, sans-serif", padding: "1rem" }} variant="h2" gutterBottom>
           About Me
         </Typography>
         <Typography
-          style={{ fontFamily: "VTCSundaykomixcaps, sans-serif", padding: "1rem", maxWidth: "80%", lineHeight: "1.5" }}
+          style={{ fontFamily: "Helvetica, Arial, sans-serif", padding: "1rem", maxWidth: "80%", lineHeight: "1.5" }}
           variant="h5"
         >
           My name is Menachem Angster, I am currently-based between New York City and Corvallis Oregon. I grew up in the
