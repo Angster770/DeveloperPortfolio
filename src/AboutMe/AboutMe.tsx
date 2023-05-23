@@ -11,7 +11,10 @@ const AboutMeContainer = styled(Grid)`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  // height: 100vh;
+    display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   padding-top: 10rem;
   // margin-bottom: 8rem;
   padding-bottom: 10rem;
