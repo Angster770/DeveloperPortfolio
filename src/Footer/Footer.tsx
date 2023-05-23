@@ -41,18 +41,18 @@ export const Footer = () => {
           position: "relative",
           bottom: "0",
           width: "100%",
-          height: "2.5rem",
+          height: "1.5rem",
           backgroundColor: "#1FB7FC",
           display: "flex",
           flexDirection: "row",
-          padding: "3rem",
+          padding: "2rem",
           justifyContent: "space-between",
         }}
       >
         <Typography align="center">
           <span>&#169;</span> Menachem Angster
         </Typography>
-        <div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
+        <div style={{ display: "flex", flexDirection: "column", alignItems: "left", justifyContent: "center" }}>
           <a
             href="https://github.com/Angster770/DeveloperPortfolio"
             target="_blank"
@@ -64,7 +64,7 @@ export const Footer = () => {
               align="center"
               variant="body1"
             >
-              <Typography style={{ color: "#333333" }} align="center" variant="body1">
+              <Typography style={{ color: "#333333" }} align="left" variant="body1">
                 My Github
               </Typography>
               <GitHubIcon style={{ color: "inherit" }} />
